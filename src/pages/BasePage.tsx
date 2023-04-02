@@ -1,12 +1,14 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import Logo from "@/assets/logo-horizontal.png";
+import MenuIcon from "@mui/icons-material/Menu";
+import { Box, Button, Container, List, ListItem } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
-import IconButton from "@mui/material/IconButton";
+import Drawer from "@mui/material/Drawer";
 import Paper from "@mui/material/Paper";
-import { styled } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import Grid2 from "@mui/material/Unstable_Grid2";
+import { styled } from "@mui/material/styles";
 import { Outlet } from "@tanstack/react-router";
-import { Menu } from "@mui/icons-material";
+import React from "react";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -15,9 +17,9 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const a = ["a", "b", "c", "d", "e"];
-
 const BasePage = () => {
+  const [drawerState, setDrawerState] = React.useState<boolean>(false);
+
   return (
     <>
       {/* Header */}
@@ -33,29 +35,45 @@ const BasePage = () => {
       </Container>
 
       <AppBar color="secondary" component="nav">
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            // onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            padding: { sm: "0 50px", md: "0 100px", lg: "0 150px" },
+          }}
+        >
+          <Box sx={{ display: "block" }}>
+            <img src={Logo} alt="365 Viagens" />
+          </Box>
+
+          <Button
+            color={"inherit"}
+            aria-label="Open Menu"
+            sx={{ display: { sm: "none" } }}
+            onClick={() => setDrawerState(true)}
           >
-            <Menu />
-          </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            <MenuIcon color="primary" />
+          </Button>
+
+          <Drawer
+            //
+            anchor={"right"}
+            open={drawerState}
+            onClose={() => setDrawerState(false)}
           >
-            MUI
-          </Typography>
+            <List sx={{ width: { xs: "180px" } }}>
+              <ListItem>
+                <Button>Flights</Button>
+              </ListItem>
+              <ListItem>
+                <Button>About</Button>
+              </ListItem>
+            </List>
+          </Drawer>
+
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {/* {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
-                {item}
-              </Button>
-            ))} */}
+            <Button>Flights</Button>
+            <Button>About</Button>
           </Box>
         </Toolbar>
       </AppBar>

@@ -1,6 +1,6 @@
 import Logo from "@/assets/logo-horizontal.png";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Box, Button, Container, List, ListItem } from "@mui/material";
+import { Box, Button, Container, List, ListItemButton, ListItemText } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Drawer from "@mui/material/Drawer";
 import Paper from "@mui/material/Paper";
@@ -62,12 +62,12 @@ const BasePage = () => {
             onClose={() => setDrawerState(false)}
           >
             <List sx={{ width: { xs: "180px" } }}>
-              <ListItem>
-                <Button>Flights</Button>
-              </ListItem>
-              <ListItem>
-                <Button>About</Button>
-              </ListItem>
+              <ListItemButton>
+                <ListItemText primary="Flights" />
+              </ListItemButton>
+              <ListItemButton>
+                <ListItemText primary="About" />
+              </ListItemButton>
             </List>
           </Drawer>
 

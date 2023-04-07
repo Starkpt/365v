@@ -2,10 +2,9 @@ import { RouterProvider } from "@tanstack/react-router";
 import { useState } from "react";
 import { router } from "./router/Router";
 
+import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/system";
 import "./App.css";
-import "./index.css";
-import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {

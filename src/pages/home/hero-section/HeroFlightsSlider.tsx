@@ -47,18 +47,30 @@ function HeroFlightsSlider() {
       {travels.map(({ travelName, rnavtRef, imgSrc }, id) => {
         return (
           <SwiperSlide key={id} style={{ width: "150px", height: "250px" }}>
-            <Card raised sx={{ width: "100%", height: "100%" }}>
-              <CardActionArea sx={{ ...cardActionAreaStyles, backgroundImage: `url("${imgSrc}")` }}>
-                {/* <CardMedia component="img" height="100%" image={MexicoCardImage} alt="green iguana" /> */}
-                <CardContent
-                  sx={{
-                    width: "100%",
-                    // background: "#ffffff40",
-                    // background: "#ffffff52",
-                    // background: "#E6E7E852",
-                    background: "#5daeff52",
-                  }}
-                >
+            <Card
+              raised
+              sx={{
+                ...cardActionAreaStyles,
+                width: "100%",
+                height: "100%",
+                backgroundImage: `url("${imgSrc}")`,
+              }}
+            >
+              {/* <CardMedia component="img" height="100%" image={MexicoCardImage} alt="green iguana" /> */}
+              <CardContent
+                sx={{
+                  width: "100%",
+                  background: "#5daeff52",
+                  boxSizing: "border-box",
+                  height: "80px",
+                  display: "flex",
+                  alignItems: "center",
+                  padding: "0 !important",
+                  transition: "background ease-in-out .2s",
+                  ":hover": { background: "#2961c980" },
+                }}
+              >
+                <CardActionArea sx={{ height: "100%" }}>
                   <Typography variant="h6" component="div" color={"ivory"}>
                     {travelName}
                   </Typography>
@@ -69,8 +81,8 @@ function HeroFlightsSlider() {
                   >
                     {rnavtRef}
                   </Typography>
-                </CardContent>
-              </CardActionArea>
+                </CardActionArea>
+              </CardContent>
             </Card>
           </SwiperSlide>
         );

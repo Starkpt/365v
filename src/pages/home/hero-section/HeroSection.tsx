@@ -14,7 +14,8 @@ const cardStyles = {
   position: "absolute",
   width: { xs: "75vw", sm: "55vw", md: "45vw", lg: "55vw", xl: "60vw" },
   height: "350px",
-  // padding: "10px 10px 0",
+  padding: "10px",
+  boxSizing: "border-box",
 };
 
 function HeroSection() {

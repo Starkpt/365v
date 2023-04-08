@@ -4,6 +4,12 @@ body {
   margin: 0;
 }
 
+@media screen and (max-width: 599px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
 #root {
   width: 100%;
   max-width: 100%;

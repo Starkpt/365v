@@ -1,6 +1,6 @@
-import Home, { HomePage } from "../pages/home/Home";
 import { ReactRouter, RootRoute, Route } from "@tanstack/react-router";
 import BasePage from "../pages/BasePage";
+import HomePage from "../pages/home/Home";
 
 declare module "@tanstack/react-router" {
   interface Register {
@@ -182,9 +182,7 @@ const homeRoute = new Route({
 // ROUTE TREE
 const routeTree = rootRoute.addChildren([
   // indexRoute,
-  baseRoute.addChildren([
-    homeRoute
-  ]),
+  baseRoute.addChildren([homeRoute]),
   // authenticatedRoutes.addChildren([
   // areasRoute,
   // dashboardRoute,

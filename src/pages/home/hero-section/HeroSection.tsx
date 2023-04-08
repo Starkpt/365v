@@ -1,6 +1,7 @@
 import HeroSlider from "@/components/hero-slider/HeroSlider";
-import { Card, Box } from "@mui/material";
+import { Card, Box, Typography } from "@mui/material";
 import HeroFlightsSlider from "./HeroFlightsSlider";
+import Divider from "@mui/material/Divider";
 
 const boxStyles = {
   height: "100%",
@@ -23,6 +24,10 @@ function HeroSection() {
     <Box sx={boxStyles}>
       <HeroSlider />
       <Card variant="outlined" sx={cardStyles}>
+        <Typography variant="h5" sx={{ textAlign: "left", fontWeight: 500 }} color={"primary.main"}>
+          Promotions
+        </Typography>
+        <Divider sx={{ marginBottom: "10px" }} />
         <HeroFlightsSlider />
       </Card>
     </Box>

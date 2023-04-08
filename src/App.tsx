@@ -7,6 +7,9 @@ import { ThemeProvider } from "@mui/system";
 import "./App.css";
 
 const theme = createTheme({
+  typography: {
+    fontFamily: ["Nexa"].join(","),
+  },
   palette: {
     primary: {
       main: "#041DB8",

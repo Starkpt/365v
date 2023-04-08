@@ -2,6 +2,7 @@ body {
   overflow: hidden;
   padding-top: 64px;
   margin: 0;
+  font-family: "Nexa";
 }
 
 @media screen and (max-width: 599px) {

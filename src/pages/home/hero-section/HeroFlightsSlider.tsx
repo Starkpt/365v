@@ -1,12 +1,11 @@
 import { Card, CardActionArea } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { Pagination } from "swiper";
-// Import Swiper React components
+import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import required modules
 
 import "swiper/css";
+import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./heroFlightsSliderStyles.css";
 
@@ -26,9 +25,22 @@ const travels = [
   { travelName: "Uzebequistan", rnavtRef: "RNAVT 1234", imgSrc: UzebequistanCardImage },
 ];
 
+const cardContentStyles = {
+  width: "100%",
+  background: "#5daeff52",
+  boxSizing: "border-box",
+  height: "80px",
+  display: "flex",
+  alignItems: "center",
+  padding: "0 !important",
+  transition: "background ease-in-out .2s",
+  ":hover": { background: "#2961c980" },
+};
+
 const cardActionAreaStyles = {
   display: "flex",
   alignItems: "end",
+  width: "100%",
   height: "100%",
   backgroundSize: "cover",
   backgroundPosition: "center",
@@ -38,44 +50,49 @@ function HeroFlightsSlider() {
   return (
     <Swiper
       className="mySwiper"
-      slidesPerView={3}
-      spaceBetween={15}
-      loop={true}
-      modules={[Pagination]}
+      // slidesPerView={4}
+      // slidesPerView={"auto"}
+      // spaceBetween={15}
+      // centeredSlides={true}
+      // watchSlidesProgress={true}
+      // loop={true}
+      modules={[Pagination, Navigation]}
       pagination={{ clickable: true }}
+      breakpoints={{
+        640: {
+          slidesPerGroup: 2,
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerGroup: 3,
+          slidesPerView: 3,
+          spaceBetween: 15,
+        },
+        1024: {
+          slidesPerGroup: 4,
+          slidesPerView: 4,
+          spaceBetween: 15,
+        },
+        1536: {
+          slidesPerGroup: 5,
+          slidesPerView: 5,
+          spaceBetween: 15,
+        },
+      }}
     >
       {travels.map(({ travelName, rnavtRef, imgSrc }, id) => {
         return (
-          <SwiperSlide key={id} style={{ width: "150px", height: "250px" }}>
-            <Card
-              raised
-              sx={{
-                ...cardActionAreaStyles,
-                width: "100%",
-                height: "100%",
-                backgroundImage: `url("${imgSrc}")`,
-              }}
-            >
+          <SwiperSlide key={id} virtualIndex={id} style={{ width: "150px", height: "250px" }}>
+            <Card raised sx={{ ...cardActionAreaStyles, backgroundImage: `url("${imgSrc}")` }}>
               {/* <CardMedia component="img" height="100%" image={MexicoCardImage} alt="green iguana" /> */}
-              <CardContent
-                sx={{
-                  width: "100%",
-                  background: "#5daeff52",
-                  boxSizing: "border-box",
-                  height: "80px",
-                  display: "flex",
-                  alignItems: "center",
-                  padding: "0 !important",
-                  transition: "background ease-in-out .2s",
-                  ":hover": { background: "#2961c980" },
-                }}
-              >
+              <CardContent sx={cardContentStyles}>
                 <CardActionArea sx={{ height: "100%" }}>
-                  <Typography variant="h6" component="div" color={"ivory"}>
+                  <Typography variant="subtitle1" color={"ivory"}>
                     {travelName}
                   </Typography>
                   <Typography
-                    variant="body2"
+                    variant="caption"
                     color="ivory"
                     sx={{ fontSize: "11px", fontWeight: 300 }}
                   >

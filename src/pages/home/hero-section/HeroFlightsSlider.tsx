@@ -64,9 +64,14 @@ function HeroFlightsSlider() {
           slidesPerView: 1,
           spaceBetween: 30,
         },
+        576: {
+          slidesPerGroup: 1,
+          slidesPerView: 1,
+          spaceBetween: 30,
+        },
         640: {
-          slidesPerGroup: 2,
-          slidesPerView: 2,
+          slidesPerGroup: 1,
+          slidesPerView: 1,
           spaceBetween: 30,
         },
         768: {
@@ -74,9 +79,14 @@ function HeroFlightsSlider() {
           slidesPerView: 2,
           spaceBetween: 30,
         },
+        992: {
+          slidesPerGroup: 2,
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
         1024: {
-          slidesPerGroup: 3,
-          slidesPerView: 3,
+          slidesPerGroup: 2,
+          slidesPerView: 2,
           spaceBetween: 30,
         },
         1400: {

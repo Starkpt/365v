@@ -49,35 +49,45 @@ const cardActionAreaStyles = {
 function HeroFlightsSlider() {
   return (
     <Swiper
-      className="mySwiper"
+      // loop={true}
+      // spaceBetween={15}
       // slidesPerView={4}
       // slidesPerView={"auto"}
-      // spaceBetween={15}
       // centeredSlides={true}
       // watchSlidesProgress={true}
-      // loop={true}
+      className="mySwiper"
       modules={[Pagination, Navigation]}
       pagination={{ clickable: true }}
       breakpoints={{
+        200: {
+          slidesPerGroup: 1,
+          slidesPerView: 1,
+          spaceBetween: 30,
+        },
         640: {
           slidesPerGroup: 2,
           slidesPerView: 2,
-          spaceBetween: 20,
+          spaceBetween: 30,
         },
         768: {
-          slidesPerGroup: 3,
-          slidesPerView: 3,
-          spaceBetween: 15,
+          slidesPerGroup: 2,
+          slidesPerView: 2,
+          spaceBetween: 30,
         },
         1024: {
+          slidesPerGroup: 3,
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        1400: {
           slidesPerGroup: 4,
           slidesPerView: 4,
-          spaceBetween: 15,
+          spaceBetween: 30,
         },
         1536: {
           slidesPerGroup: 5,
           slidesPerView: 5,
-          spaceBetween: 15,
+          spaceBetween: 30,
         },
       }}
     >

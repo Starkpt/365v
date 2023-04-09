@@ -13,9 +13,9 @@ const boxStyles = {
 
 const cardStyles = {
   position: "absolute",
-  width: { xs: "75vw", sm: "55vw", md: "45vw", lg: "55vw", xl: "60vw" },
-  height: "350px",
-  padding: "10px",
+  width: { xs: "75vw", sm: "55vw", md: "50vw", lg: "55vw", xl: "60vw" },
+  // height: "350px",
+  padding: "20px 25px",
   boxSizing: "border-box",
 };
 
@@ -29,6 +29,11 @@ function HeroSection() {
         </Typography>
         <Divider sx={{ marginBottom: "10px" }} />
         <HeroFlightsSlider />
+
+        <Typography variant="h5" sx={{ textAlign: "left", fontWeight: 500 }} color={"primary.main"}>
+          Book & Go
+        </Typography>
+        <Divider sx={{ marginBottom: "10px" }} />
       </Card>
     </Box>
   );

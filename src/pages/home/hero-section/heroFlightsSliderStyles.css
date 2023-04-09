@@ -1,6 +1,7 @@
 .swiper {
   width: 100%;
   height: 295px;
+  overflow: initial;
 }
 
 .swiper-slide {

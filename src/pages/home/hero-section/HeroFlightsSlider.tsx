@@ -85,8 +85,8 @@ function HeroFlightsSlider() {
           spaceBetween: 30,
         },
         1024: {
-          slidesPerGroup: 2,
-          slidesPerView: 2,
+          slidesPerGroup: 3,
+          slidesPerView: 3,
           spaceBetween: 30,
         },
         1400: {

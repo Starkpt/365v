@@ -1,6 +1,7 @@
 import HeroSlider from "@/components/hero-slider/HeroSlider";
 import {
   Box,
+  Button,
   Card,
   FormControl,
   FormHelperText,
@@ -71,6 +72,7 @@ function HeroSection() {
   const [returnDate, setReturnDate] = useState<Dayjs | null>(dayjs("2022-04-17T15:30"));
   const [locationFrom, setLocationFrom] = useState("");
   const [locationTo, setLocationTo] = useState("");
+  const [passengersNo, setPassengersNo] = useState("");
 
   return (
     <Box sx={boxStyles}>
@@ -136,6 +138,23 @@ function HeroSection() {
                 <MenuItem value="porto">Porto</MenuItem>
               </Select>
             </FormControl>
+            <FormControl sx={{ minWidth: "130px" }} size="small">
+              <InputLabel sx={fromToStyles}>Passengers</InputLabel>
+              <Select
+                value={passengersNo}
+                label="Passengers"
+                sx={locationStyles}
+                onChange={(e: SelectChangeEvent) => setPassengersNo(e.target.value)}
+              >
+                <MenuItem value="">-</MenuItem>
+                <MenuItem value="1adults">1 Adults, Economy</MenuItem>
+                <MenuItem value="2adults">2 Adults, Economy</MenuItem>
+                <MenuItem value="1adults-1child">1 Adults + 1 Child, Economy</MenuItem>
+                <MenuItem value="1adults-1child">1 Adults + 2 Child, Economy</MenuItem>
+                <MenuItem value="etc">etc..</MenuItem>
+              </Select>
+            </FormControl>
+            <Button variant="contained">Search</Button>
           </Box>
         </LocalizationProvider>
       </Card>

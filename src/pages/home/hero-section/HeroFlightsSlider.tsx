@@ -108,7 +108,7 @@ function HeroFlightsSlider() {
               {/* <CardMedia component="img" height="100%" image={MexicoCardImage} alt="green iguana" /> */}
               <CardContent sx={cardContentStyles}>
                 <CardActionArea sx={{ height: "100%" }}>
-                  <Typography variant="subtitle1" color={"ivory"}>
+                  <Typography variant="subtitle1" sx={{ fontWeight: 500 }} color={"ivory"}>
                     {travelName}
                   </Typography>
                   <Typography

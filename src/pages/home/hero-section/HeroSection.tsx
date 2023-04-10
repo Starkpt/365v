@@ -43,10 +43,12 @@ const dateTimeFieldStyles = {
     fontSize: ".90rem",
   },
   "input.MuiInputBase-input.MuiOutlinedInput-input": {
+    height: "32px",
     backgroundColor: "#F8F8F8",
-    padding: "6px 14px",
-    fontSize: "0.85rem",
-    fontWeight: 500,
+    padding: "0px 14px",
+    fontFamily: "sans-serif",
+    fontSize: "0.80rem",
+    fontWeight: 600,
     // color: "#041DB8",
   },
   fieldset: {
@@ -54,17 +56,20 @@ const dateTimeFieldStyles = {
   },
 };
 
-const fromToStyles = {
+const resizableLabelStyles = {
   fontFamily: "sans-serif",
   fontSize: ".90rem",
-  top: "0",
+  height: "100%",
   lineHeight: 1,
+  top: "0",
 };
 
 const locationStyles = {
-  height: "31.55px",
+  height: "32px",
   textAlign: "left",
-  fontWeight: 500,
+  fontFamily: "sans-serif",
+  fontSize: "0.80rem",
+  fontWeight: 600,
 };
 
 function HeroSection() {
@@ -107,7 +112,7 @@ function HeroSection() {
             />
 
             <FormControl sx={{ minWidth: "130px" }} size="small">
-              <InputLabel sx={fromToStyles}>From</InputLabel>
+              <InputLabel sx={resizableLabelStyles}>From</InputLabel>
               <Select
                 value={locationFrom}
                 label="From"
@@ -123,7 +128,7 @@ function HeroSection() {
               </Select>
             </FormControl>
             <FormControl sx={{ minWidth: "130px" }} size="small">
-              <InputLabel sx={fromToStyles}>To</InputLabel>
+              <InputLabel sx={resizableLabelStyles}>To</InputLabel>
               <Select
                 value={locationTo}
                 label="To"
@@ -139,7 +144,7 @@ function HeroSection() {
               </Select>
             </FormControl>
             <FormControl sx={{ minWidth: "130px" }} size="small">
-              <InputLabel sx={fromToStyles}>Passengers</InputLabel>
+              <InputLabel sx={resizableLabelStyles}>Passengers</InputLabel>
               <Select
                 value={passengersNo}
                 label="Passengers"
@@ -154,7 +159,14 @@ function HeroSection() {
                 <MenuItem value="etc">etc..</MenuItem>
               </Select>
             </FormControl>
-            <Button variant="contained">Search</Button>
+            <Button
+              sx={{
+                height: "32px",
+              }}
+              variant="contained"
+            >
+              Search
+            </Button>
           </Box>
         </LocalizationProvider>
       </Card>

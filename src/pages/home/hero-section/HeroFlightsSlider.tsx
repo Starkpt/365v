@@ -45,8 +45,11 @@ const cardContentStyles = {
   },
 
   ":hover": {
-    background:
-      "linear-gradient(180deg, rgba(0,0,0,0) 0%,  rgba(9,43,95,0.15) 15%, rgba(9,43,95,1) 100%)",
+    background: `linear-gradient(
+        180deg, rgba(0,0,0,0) 0%, 
+        rgba(9,43,95,0.15) 15%, 
+        rgba(9,43,95,1) 100%
+      )`,
     height: "100px",
     ".price-tag": {
       position: "absolute",

@@ -1,8 +1,6 @@
-import "keen-slider/keen-slider.min.css";
-import { useKeenSlider } from "keen-slider/react";
-import { useState } from "react";
-import "./styles.css";
-import { Box } from "@mui/material";
+import { Box } from "@mui/system";
+import { EffectFade } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const images = [
   "https://images.unsplash.com/photo-1590004953392-5aba2e72269a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=500&w=800&q=80",
@@ -12,56 +10,44 @@ const images = [
 ];
 
 function HeroSlider() {
-  const [opacities, setOpacities] = useState<number[]>([]);
-
-  const [sliderRef] = useKeenSlider<HTMLDivElement>(
-    {
-      slides: images.length,
-      loop: true,
-      detailsChanged(s) {
-        const new_opacities = s.track.details.slides.map((slide) => slide.portion);
-        setOpacities(new_opacities);
-      },
-    },
-    [
-      (slider) => {
-        let timeout: number;
-        let mouseOver = false;
-        function clearNextTimeout() {
-          clearTimeout(timeout);
-        }
-        function nextTimeout() {
-          clearTimeout(timeout);
-          if (mouseOver) return;
-          timeout = setTimeout(() => {
-            slider.next();
-          }, 2000);
-        }
-        slider.on("created", () => {
-          slider.container.addEventListener("mouseover", () => {
-            mouseOver = true;
-            clearNextTimeout();
-          });
-          slider.container.addEventListener("mouseout", () => {
-            mouseOver = false;
-            nextTimeout();
-          });
-          nextTimeout();
-        });
-        slider.on("dragStarted", clearNextTimeout);
-        slider.on("animationEnded", nextTimeout);
-        slider.on("updated", nextTimeout);
-      },
-    ]
-  );
-
   return (
-    <Box ref={sliderRef} className="fader">
-      {images.map((src, idx) => (
-        <div key={idx} className="fader__slide" style={{ opacity: opacities[idx] }}>
-          <img src={src} />
-        </div>
-      ))}
+    <Box
+      sx={{
+        width: "100%",
+        height: "100vh",
+        position: "absolute",
+        overflow: "hidden",
+        top: 0,
+      }}
+    >
+      <Box
+        sx={{
+          height: {
+            xs: "90vh",
+            sm: "80vh",
+            md: "80vh",
+            lg: "60vh",
+            xl: "60vh",
+          },
+        }}
+      >
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={3}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+          loop={true}
+          modules={[EffectFade]}
+          effect="fade"
+          style={{ height: "100%" }}
+        >
+          {images.map((src, idx) => (
+            <SwiperSlide key={idx}>
+              <img src={src} alt={src} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Box>
     </Box>
   );
 }

@@ -29,6 +29,13 @@ function HeroSlider() {
             lg: "60vh",
             xl: "60vh",
           },
+          minHeight: {
+            xs: "800px",
+            sm: "800px",
+            md: "700px",
+            lg: "600px",
+            xl: "600px",
+          }
         }}
       >
         <Swiper

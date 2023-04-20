@@ -14,6 +14,12 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs, { Dayjs } from "dayjs";
 import { useState } from "react";
 
+const stacksWrapperStyles = {
+  display: "flex",
+  flexDirection: { xs: "column", sm: "column", md: "column", lg: "row", xl: "row" },
+  gap: { xs: "16px", sm: "16px", md: "16px", lg: "12px", xl: "12px" },
+};
+
 const dateTimeFieldStyles = {
   flex: 1,
   label: {
@@ -68,13 +74,7 @@ function HeroSearchNGo() {
       <Divider sx={{ marginBottom: "24px" }} />
 
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", sm: "column", md: "column", lg: "row", xl: "row" },
-            gap: { xs: "16px", sm: "16px", md: "16px", lg: "12px", xl: "12px" },
-          }}
-        >
+        <Box sx={stacksWrapperStyles}>
           <Stack
             direction={{ xs: "column", sm: "column", md: "row", lg: "row", xl: "row" }}
             width={{ xs: "100%", sm: "100%", md: "100%", lg: "50%", xl: "33%" }}

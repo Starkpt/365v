@@ -1,3 +1,4 @@
+import { heroSectionResponsiveStyles } from "@/pages/home/hero-section/HeroSection";
 import { Box } from "@mui/system";
 import { EffectFade } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,35 +10,18 @@ const images = [
   "https://images.unsplash.com/photo-1590005176489-db2e714711fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=500&w=800&q=80",
 ];
 
+const heroSliderWrapperStyles = {
+  width: "100%",
+  height: "100vh",
+  position: "absolute",
+  overflow: "hidden",
+  top: 0,
+};
+
 function HeroSlider() {
   return (
-    <Box
-      sx={{
-        width: "100%",
-        height: "100vh",
-        position: "absolute",
-        overflow: "hidden",
-        top: 0,
-      }}
-    >
-      <Box
-        sx={{
-          height: {
-            xs: "90vh",
-            sm: "80vh",
-            md: "80vh",
-            lg: "60vh",
-            xl: "60vh",
-          },
-          minHeight: {
-            xs: "800px",
-            sm: "800px",
-            md: "700px",
-            lg: "600px",
-            xl: "600px",
-          }
-        }}
-      >
+    <Box sx={heroSliderWrapperStyles}>
+      <Box sx={heroSectionResponsiveStyles}>
         <Swiper
           spaceBetween={50}
           slidesPerView={3}

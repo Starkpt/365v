@@ -1,7 +1,8 @@
-import { Box } from "@mui/system";
-import HeroSection from "./hero-section/HeroSection";
-import { Button, Typography } from "@mui/material";
 import ImgPlane from "@/assets/plane.png";
+import { Button, Typography } from "@mui/material";
+import { Box } from "@mui/system";
+import CTASection from "./cta-section/CTASection";
+import HeroSection from "./hero-section/HeroSection";
 
 const flyWithUsButtonStyles = {
   borderRadius: "0",
@@ -26,6 +27,7 @@ const flyWithUsTypographyStyles = {
   textAlign: "left",
   fontWeight: 500,
 };
+
 const HomePage = () => {
   return (
     <Box>
@@ -38,7 +40,7 @@ const HomePage = () => {
         </Typography>
       </Button>
 
-      
+      <CTASection />
       {/* <Unstable_Grid2 container>
         <Unstable_Grid2 xs={8} sm={8} md={8} lg={8} xl={8}>
           <Item>xs=8</Item>

@@ -31,12 +31,12 @@ const heroSectionStyles = {
 
 const cardStyles = {
   width: { xs: "75vw", sm: "55vw", md: "50vw", lg: "65vw", xl: "60vw" },
+  minWidth: "300px",
   // height: "350px",
   padding: "20px 25px",
   boxSizing: "border-box",
   zIndex: 1,
 };
-
 
 function HeroSection() {
   return (

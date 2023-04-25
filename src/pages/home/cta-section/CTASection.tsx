@@ -3,18 +3,18 @@ import { Box, Button, Card, Typography } from "@mui/material";
 
 export const callToActionResponsiveStyles = {
   height: {
-    xs: "30vh",
-    sm: "80vh",
-    md: "80vh",
+    xs: "50vh",
+    sm: "50vh",
+    md: "50vh",
     lg: "60vh",
     xl: "60vh",
   },
   minHeight: {
-    xs: "850px",
-    sm: "850px",
-    md: "750px",
-    lg: "650px",
-    xl: "650px",
+    xs: "500px",
+    sm: "550px",
+    md: "550px",
+    lg: "600px",
+    xl: "600px",
   },
 };
 
@@ -37,6 +37,7 @@ const cardStyles = {
   display: "flex",
   flexDirection: "column",
   backgroundColor: "#f5f6f8",
+  border: 0,
 };
 
 function CTASection() {
@@ -64,7 +65,9 @@ function CTASection() {
           </Typography>
 
           <Button sx={{ height: "32px", textTransform: "unset" }} variant="contained" size="small">
-            Plan your next trip
+            <Typography variant="body2" fontWeight={500}>
+              Plan your next trip
+            </Typography>
           </Button>
         </Box>
       </Card>

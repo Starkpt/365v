@@ -165,7 +165,9 @@ function HeroSearchNGo() {
             </FormControl>
 
             <Button sx={{ height: "32px" }} variant="contained">
-              Search
+              <Typography variant="body2" fontWeight={500}>
+                Search
+              </Typography>
             </Button>
           </Stack>
         </Box>

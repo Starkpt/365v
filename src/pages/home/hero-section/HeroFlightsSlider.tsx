@@ -57,13 +57,66 @@ const cardContentStyles = {
   },
 };
 
-const cardActionAreaStyles = {
+const cardWrapperStyles = {
   display: "flex",
   alignItems: "end",
   width: "100%",
   height: "100%",
   backgroundSize: "cover",
   backgroundPosition: "center",
+};
+
+const cardActionAreaStyles = {
+  height: "100%",
+  display: "flex",
+  flexDirection: "column",
+  alignContent: "left",
+  alignItems: "flex-start",
+  padding: "10px",
+  justifyContent: "start",
+};
+
+const swiperBreakpoints = {
+  200: {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 30,
+  },
+  576: {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 30,
+  },
+  640: {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 30,
+  },
+  768: {
+    slidesPerGroup: 2,
+    slidesPerView: 2,
+    spaceBetween: 30,
+  },
+  992: {
+    slidesPerGroup: 2,
+    slidesPerView: 2,
+    spaceBetween: 30,
+  },
+  1024: {
+    slidesPerGroup: 3,
+    slidesPerView: 3,
+    spaceBetween: 30,
+  },
+  1400: {
+    slidesPerGroup: 4,
+    slidesPerView: 4,
+    spaceBetween: 30,
+  },
+  1536: {
+    slidesPerGroup: 5,
+    slidesPerView: 5,
+    spaceBetween: 30,
+  },
 };
 
 function HeroFlightsSlider() {
@@ -83,66 +136,15 @@ function HeroFlightsSlider() {
         className="mySwiper"
         modules={[Pagination, Navigation]}
         pagination={{ clickable: true }}
-        breakpoints={{
-          200: {
-            slidesPerGroup: 1,
-            slidesPerView: 1,
-            spaceBetween: 30,
-          },
-          576: {
-            slidesPerGroup: 1,
-            slidesPerView: 1,
-            spaceBetween: 30,
-          },
-          640: {
-            slidesPerGroup: 1,
-            slidesPerView: 1,
-            spaceBetween: 30,
-          },
-          768: {
-            slidesPerGroup: 2,
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-          992: {
-            slidesPerGroup: 2,
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-          1024: {
-            slidesPerGroup: 3,
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-          1400: {
-            slidesPerGroup: 4,
-            slidesPerView: 4,
-            spaceBetween: 30,
-          },
-          1536: {
-            slidesPerGroup: 5,
-            slidesPerView: 5,
-            spaceBetween: 30,
-          },
-        }}
+        breakpoints={swiperBreakpoints}
       >
         {travels.map(({ travelName, rnavtRef, imgSrc, price }, id) => {
           return (
             <SwiperSlide key={id} virtualIndex={id} style={{ width: "150px", height: "250px" }}>
-              <Card raised sx={{ ...cardActionAreaStyles, backgroundImage: `url("${imgSrc}")` }}>
+              <Card raised sx={{ ...cardWrapperStyles, backgroundImage: `url("${imgSrc}")` }}>
                 {/* <CardMedia component="img" height="100%" image={MexicoCardImage} alt="green iguana" /> */}
                 <CardContent sx={cardContentStyles}>
-                  <CardActionArea
-                    sx={{
-                      height: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignContent: "left",
-                      alignItems: "flex-start",
-                      padding: "10px",
-                      justifyContent: "start",
-                    }}
-                  >
+                  <CardActionArea sx={cardActionAreaStyles}>
                     <Typography variant="subtitle1" sx={{ fontWeight: 500 }} color={"ivory"}>
                       {travelName}
                     </Typography>

@@ -3,6 +3,7 @@ import { Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import CTASection from "./cta-section/CTASection";
 import HeroSection from "./hero-section/HeroSection";
+import ContactsSection from "./contacts-section/ContactsSection";
 
 const flyWithUsButtonStyles = {
   borderRadius: "0",
@@ -41,6 +42,8 @@ const HomePage = () => {
       </Button>
 
       <CTASection />
+
+      <ContactsSection />
       {/* <Unstable_Grid2 container>
         <Unstable_Grid2 xs={8} sm={8} md={8} lg={8} xl={8}>
           <Item>xs=8</Item>

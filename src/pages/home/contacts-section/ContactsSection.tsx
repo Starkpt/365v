@@ -1,5 +1,5 @@
-import Textarea  from "@mui/joy/Textarea";
-import { Box, Card, Divider, FormGroup, TextField, Typography } from "@mui/material";
+import Textarea from "@mui/joy/Textarea";
+import { Box, Card, Divider, FormGroup, Stack, TextField, Typography } from "@mui/material";
 
 export const contactsResponsiveStyles = {
   height: {
@@ -30,7 +30,7 @@ const contactsSectionStyles = {
 const cardStyles = {
   width: { xs: "75vw", sm: "55vw", md: "50vw", lg: "65vw", xl: "60vw" },
   minWidth: "300px",
-  // height: "350px",
+  height: "350px",
   // padding: "20px 25px",
   boxSizing: "border-box",
   zIndex: 1,
@@ -78,16 +78,42 @@ function ContactsSection() {
           </Typography>
           <Divider sx={{ marginBottom: "24px" }} />
           <FormGroup>
-            <TextField size="small" variant="outlined" label="Name" />
-          </FormGroup>
-          <FormGroup>
-            <TextField size="small" variant="outlined" label="E-mail" />
-          </FormGroup>
-          <FormGroup>
-            <TextField size="small" variant="outlined" label="Phone no." />
-          </FormGroup>
-          <FormGroup>
-            <Textarea size="sm" placeholder="Message" variant="solid" />
+            <Stack gap={{ xs: "16px", sm: "16px", md: "16px", lg: "12px", xl: "12px" }}>
+              <Stack width={"100%"}>
+                <TextField style={{ width: "100%" }} size="small" variant="outlined" label="Name" />
+              </Stack>
+
+              <Stack
+                direction={{ xs: "column", sm: "column", md: "row", lg: "row", xl: "row" }}
+                width={{ xs: "100%", sm: "100%", md: "100%", lg: "100%", xl: "100%" }}
+                gap={{ xs: "16px", sm: "16px", md: "16px", lg: "12px", xl: "12px" }}
+                useFlexGap
+                // flexWrap="wrap"
+              >
+                <TextField
+                  style={{ width: "50%" }}
+                  size="small"
+                  variant="outlined"
+                  label="Phone no."
+                />
+                <TextField
+                  style={{ width: "50%" }}
+                  size="small"
+                  variant="outlined"
+                  label="E-mail"
+                />
+              </Stack>
+
+              <Stack
+                direction={{ xs: "column", sm: "column", md: "row", lg: "row", xl: "row" }}
+                width={{ xs: "100%", sm: "100%", md: "100%", lg: "50%", xl: "33%" }}
+                gap={{ xs: "16px", sm: "16px", md: "16px", lg: "12px", xl: "12px" }}
+                useFlexGap
+                flexWrap="wrap"
+              >
+                {/* <Textarea size="sm" placeholder="Message" variant="solid" /> */}
+              </Stack>
+            </Stack>
           </FormGroup>
         </Box>
       </Card>

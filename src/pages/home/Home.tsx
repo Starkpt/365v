@@ -34,7 +34,7 @@ const HomePage = () => {
     <Box>
       <HeroSection />
 
-      <Button variant="contained" href="#text-buttons" sx={flyWithUsButtonStyles}>
+      <Button variant="contained" href="#fly-with-us" sx={flyWithUsButtonStyles}>
         <img src={ImgPlane} alt="Fly with us" />
         <Typography variant="body1" color={"primary.main"} sx={flyWithUsTypographyStyles}>
           Fly with us.

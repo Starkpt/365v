@@ -1,4 +1,4 @@
-import { ReactRouter, RootRoute, Route } from "@tanstack/react-router";
+import { RootRoute, Route, Router } from "@tanstack/react-router";
 import BasePage from "../pages/BasePage";
 import HomePage from "../pages/home/Home";
 
@@ -214,4 +214,4 @@ const routeTree = rootRoute.addChildren([
 ]);
 
 // ROUTER
-export const router = new ReactRouter({ routeTree });
+export const router = new Router({ routeTree });

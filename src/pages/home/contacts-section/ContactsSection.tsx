@@ -1,4 +1,4 @@
-import Textarea from "@mui/joy/Textarea";
+import { Textarea } from "@mui/joy";
 import { Box, Card, Divider, FormGroup, Stack, TextField, Typography } from "@mui/material";
 
 export const contactsResponsiveStyles = {
@@ -30,7 +30,7 @@ const contactsSectionStyles = {
 const cardStyles = {
   width: { xs: "75vw", sm: "55vw", md: "50vw", lg: "65vw", xl: "60vw" },
   minWidth: "300px",
-  height: "350px",
+  // height: "350px",
   // padding: "20px 25px",
   boxSizing: "border-box",
   zIndex: 1,
@@ -56,7 +56,7 @@ function ContactsSection() {
   return (
     <Box sx={contactsSectionStyles}>
       <Card variant="outlined" sx={cardStyles}>
-        <Box className="map" sx={{ width: "50%", height: "100%" }}>
+        <Box className="map" sx={{ width: "50%", height: "505px" }}>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6120.387034770452!2d-8.635259075586644!3d39.914685339615644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd226671c6afac3f%3A0x6bc64af481f14343!2s365%20Viagens%20-%20Ag%C3%AAncia%20de%20viagens%20Lda!5e0!3m2!1spt-PT!2spt!4v1682984462968!5m2!1spt-PT!2spt"
             // width="600"
@@ -104,14 +104,54 @@ function ContactsSection() {
                 />
               </Stack>
 
+              <Divider />
+
               <Stack
                 direction={{ xs: "column", sm: "column", md: "row", lg: "row", xl: "row" }}
-                width={{ xs: "100%", sm: "100%", md: "100%", lg: "50%", xl: "33%" }}
+                width={{ xs: "100%", sm: "100%", md: "100%", lg: "100%", xl: "100%" }}
+                gap={{ xs: "16px", sm: "16px", md: "16px", lg: "12px", xl: "12px" }}
+                useFlexGap
+                // flexWrap="wrap"
+              >
+                <TextField
+                  style={{ width: "50%" }}
+                  size="small"
+                  variant="outlined"
+                  label="Departure"
+                />
+                <TextField
+                  style={{ width: "50%" }}
+                  size="small"
+                  variant="outlined"
+                  label="Arrival"
+                />
+              </Stack>
+
+              <Stack width={"100%"}>
+                <TextField
+                  style={{ width: "100%" }}
+                  size="small"
+                  variant="outlined"
+                  label="Location"
+                />
+              </Stack>
+
+              <Divider />
+
+              <Stack
+                direction={{ xs: "column", sm: "column", md: "row", lg: "row", xl: "row" }}
+                width={{ xs: "100%", sm: "100%", md: "100%", lg: "100%", xl: "100%" }}
                 gap={{ xs: "16px", sm: "16px", md: "16px", lg: "12px", xl: "12px" }}
                 useFlexGap
                 flexWrap="wrap"
               >
-                {/* <Textarea size="sm" placeholder="Message" variant="solid" /> */}
+                <TextField
+                  placeholder="Where do you want to go next?"
+                  size="small"
+                  multiline
+                  rows={5}
+                  style={{ width: "100%" }}
+                />
               </Stack>
             </Stack>
           </FormGroup>

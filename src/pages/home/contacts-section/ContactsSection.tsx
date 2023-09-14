@@ -1,4 +1,3 @@
-import { Textarea } from "@mui/joy";
 import { Box, Card, Divider, FormGroup, Stack, TextField, Typography } from "@mui/material";
 
 export const contactsResponsiveStyles = {

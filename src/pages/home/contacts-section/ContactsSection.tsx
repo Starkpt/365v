@@ -1,4 +1,4 @@
-import { Box, Card, Divider, FormGroup, Stack, TextField, Typography } from "@mui/material";
+import { Box, Button, Card, Divider, FormGroup, Stack, TextField, Typography } from "@mui/material";
 
 export const contactsResponsiveStyles = {
   height: {
@@ -151,6 +151,24 @@ function ContactsSection() {
                   rows={5}
                   style={{ width: "100%" }}
                 />
+              </Stack>
+
+              <Stack
+                direction={{ xs: "column", sm: "column", md: "row", lg: "row", xl: "row" }}
+                width={{ xs: "100%", sm: "100%", md: "100%", lg: "100%", xl: "100%" }}
+                gap={{ xs: "16px", sm: "16px", md: "16px", lg: "12px", xl: "12px" }}
+                useFlexGap
+                flexWrap="wrap"
+              >
+                <Button
+                  sx={{ height: "32px", width: "100%", textTransform: "unset" }}
+                  variant="contained"
+                  size="small"
+                >
+                  <Typography variant="body2" fontWeight={500}>
+                    Submit
+                  </Typography>
+                </Button>
               </Stack>
             </Stack>
           </FormGroup>
